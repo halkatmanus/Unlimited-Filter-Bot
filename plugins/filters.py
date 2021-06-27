@@ -211,7 +211,7 @@ async def get_all(client, message):
         filterlist = f"Total number of filters in **{title}** : {count}\n\n"
 
         for text in texts:
-            keywords = " ×  `{}`\n".format(text)
+            keywords = " •  `{}`\n".format(text)
             
             filterlist += keywords
 
@@ -333,12 +333,12 @@ async def give_filter(client,message):
                 try:
                     if fileid == "None":
                         if btn == "[]":
-                            await message.reply_text(reply_text, disable_web_page_preview=True)
+                            await message.reply_text(reply_text, disable_web_page_preview=False)
                         else:
                             button = eval(btn)
                             await message.reply_text(
                                 reply_text,
-                                disable_web_page_preview=True,
+                                disable_web_page_preview=False,
                                 reply_markup=InlineKeyboardMarkup(button)
                             )
                     else:
