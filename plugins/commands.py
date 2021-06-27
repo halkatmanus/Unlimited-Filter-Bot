@@ -40,7 +40,7 @@ async def showid(client, message):
         else:
             reply_id = ""
         await message.reply_text(
-            f"Your ID : `{user_id}`\nThis Group ID : `{chat_id}`\n\n{reply_id}",
+            f"Your ID : `{user_id}`\nThis Group's ID : `{chat_id}`\n\n{reply_id}",
             parse_mode="md",
             quote=True
         )   
@@ -59,10 +59,10 @@ async def showinfo(client, message):
             try:
                 checkid = int(id)
             except:
-                await message.reply_text("__Enter a valid USER ID__", quote=True, parse_mode="md")
+                await message.reply_text("__Enter a valid User ID__", quote=True, parse_mode="md")
                 return
         else:
-            await message.reply_text("__Enter a valid USER ID__", quote=True, parse_mode="md")
+            await message.reply_text("__Enter a valid User ID__", quote=True, parse_mode="md")
             return           
 
         if Config.SAVE_USER == "yes":
@@ -78,7 +78,7 @@ async def showinfo(client, message):
                 pass
 
         if not name:
-            await message.reply_text("__USER Details not found!!__", quote=True, parse_mode="md")
+            await message.reply_text("__User details not found!!__", quote=True, parse_mode="md")
             return
     else:
         if message.reply_to_message:
@@ -103,7 +103,7 @@ async def showinfo(client, message):
         f"<b>Name</b> : {name}\n\n"
         f"<b>User ID</b> : <code>{id}</code>\n\n"
         f"<b>Username</b> : {user_name}\n\n"
-        f"<b>Permanant USER link</b> : <a href='tg://user?id={id}'>Click here!</a>\n\n"
+        f"<b>Permanant User link</b> : <a href='tg://user?id={id}'>{fullname}</a>\n\n"
         f"<b>DC ID</b> : {dcid}\n\n",
         quote=True,
         parse_mode="html"
@@ -119,7 +119,7 @@ async def bot_status(client,message):
 
     if Config.SAVE_USER == "yes":
         users = await all_users()
-        userstats = f"> __**{users} users have interacted with your bot!**__\n\n"
+        userstats = f"> __**{users} users have interacted with your bot!**__\n"
     else:
         userstats = ""
 
@@ -163,16 +163,12 @@ async def bot_status(client,message):
                 quota_details = f"""
 
 **Heroku Account Status**
-
 > __You have **{total} hours** of free dyno quota available each month.__
-
 > __Dyno hours used this month__ ;
         - **{used} hours**  ( {usedperc}% )
-
 > __Dyno hours remaining this month__ ;
         - **{hours} hours**  ( {leftperc}% )
         - **Approximately {days} days!**
-
 
 """
             else:
@@ -191,17 +187,17 @@ async def bot_status(client,message):
         used = humanbytes(u)
         free = humanbytes(f)
 
-        disk = "\n**Disk Details**\n\n" \
+        disk = "\n**Disk Details**\n" \
             f"> USED  :  {used} / {total}\n" \
             f"> FREE  :  {free}\n\n"
     except:
         disk = ""
 
     await message.reply_text(
-        "**Current status of your bot!**\n\n"
-        f"> __**{filters}** filters across **{chats}** chats__\n\n"
+        "**Current status of your bot!**\n"
+        f"> __**{filters}** filters across **{chats}** chats__\n"
         f"{userstats}"
-        f"> __BOT Uptime__ : **{uptime}**\n\n"
+        f"> __BOT Uptime__ : **{uptime}**\n"
         f"{quota_details}"
         f"{disk}",
         quote=True,
@@ -217,7 +213,7 @@ async def start(client, message):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("Command Help", callback_data="help_data")
+                    InlineKeyboardButton("Help", callback_data="help_data")
                 ]
             ]
         ),
@@ -243,12 +239,12 @@ async def help(client, message):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("How to Deploy?", url="https://youtu.be/hkmc3e7U7R4"),
+                    InlineKeyboardButton("Back", callback_data="start_data"),
                     InlineKeyboardButton("About Me", callback_data="about_data")
                 ],
                 [
-                    InlineKeyboardButton("BOT Channel", url="https://t.me/TroJanzHEX"),
-                    InlineKeyboardButton("Support Group", url="https://t.me/TroJanzSupport")
+                    InlineKeyboardButton("Channel", url="https://t.me/HalkatVideos"),
+                    InlineKeyboardButton("Group", url="https://t.me/RequestVideos")
                 ]
             ]
         ),
@@ -265,7 +261,7 @@ async def about(client, message):
             [
                 [
                     InlineKeyboardButton(
-                        "SOURCE CODE", url="https://github.com/TroJanzHEX/Unlimited-Filter-Bot")
+                        "Creator", url="https://t.me/HalkatManus")
                 ],
                 [
                     InlineKeyboardButton("BACK", callback_data="help_data"),
