@@ -47,12 +47,12 @@ async def cb_handler(client, query):
         keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("How to Deploy?", url="https://youtu.be/hkmc3e7U7R4"),
+                    InlineKeyboardButton("Back", callback_data="start_data"),
                     InlineKeyboardButton("About Me", callback_data="about_data")
                 ],
                 [
-                    InlineKeyboardButton("BOT Channel", url="https://t.me/TroJanzHEX"),
-                    InlineKeyboardButton("Support Group", url="https://t.me/TroJanzSupport")
+                    InlineKeyboardButton("Channel", url="https://t.me/HalkatVideos"),
+                    InlineKeyboardButton("Group", url="https://t.me/RequestVideos")
                 ]
             ]
         )
@@ -70,7 +70,7 @@ async def cb_handler(client, query):
             [
                 [
                     InlineKeyboardButton(
-                        "SOURCE CODE", url="https://github.com/TroJanzHEX/Unlimited-Filter-Bot")
+                        "Creator", url="https://t.me/HalkatManus")
                 ],
                 [
                     InlineKeyboardButton("BACK", callback_data="help_data"),
@@ -106,7 +106,7 @@ async def cb_handler(client, query):
                     return
             else:
                 await query.message.edit_text(
-                    "I'm not connected to any groups!\nCheck /connections or connect to any groups",
+                    "I'm not connected to any groups!\nCheck /connections or connect to any group",
                     quote=True
                 )
                 return
@@ -142,7 +142,7 @@ async def cb_handler(client, query):
                 except:
                     pass
             else:
-                await query.answer("Thats not for you!!",show_alert=True)
+                await query.answer("That's not for you!!",show_alert=True)
 
 
     elif "groupcb" in query.data:
