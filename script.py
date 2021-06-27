@@ -10,7 +10,7 @@ See <i>/help</i> for commands and more details.</b>
 
 
     HELP_MSG = """
-<i>Add me as admin in your group and start filtering :)</i>
+<i>Add me as an admin in your group and start filtering :)</i>
 
 <b>Basic Commands:</b>
 • /start - Check if I'm alive!
@@ -24,14 +24,15 @@ See <i>/help</i> for commands and more details.</b>
 • /viewfilters  -  List all filters in chat
 
 <b>Connection Commands:</b>
-• <code>/connect </code>groupid  -  Connect your group to my PM. 
-• You can also simply use, /connect in groups.
+• <code>/connect </code>GroupID  -  Connect your group to my PM. 
+• You can also simply use /connect in groups.
 • /connections  -  Manage your connections.
 
-<b>Extras;</b>
+<b>Extras:</b>
 • /status  -  Shows current status of your bot (Auth User Only)
 • /id  -  Shows ID information
-• <code>/info</code> userid  -  Shows User Information. Use /info as reply to any message for their details!
+• <code>/info </code>userid  -  Shows User Information. 
+• Use /info as reply to any message for their details!
 
 """
 
